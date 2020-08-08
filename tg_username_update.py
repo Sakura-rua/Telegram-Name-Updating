@@ -16,7 +16,9 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
-
+rainbow = emojize(":rainbow:", use_aliases=True)
+lemon = emojize(":lemon:", use_aliases=True)
+watermelon = emojize(":watermelon:", use_aliases=True)
 dizzy = emojize(":dizzy:", use_aliases=True)
 cake = emojize(":cake:", use_aliases=True)
 all_time_emoji_name = ["clock12", "clock1230", "clock1", "clock130", "clock2", "clock230", "clock3", "clock330", "clock4", "clock430", "clock5", "clock530", "clock6", "clock630", "clock7", "clock730", "clock8", "clock830", "clock9", "clock930", "clock10", "clock1030", "clock11", "clock1130"]
@@ -61,9 +63,15 @@ async def change_name_auto():
                 #elif for_fun < 0.30:
                 #    last_name = '%s:%s %s %s %s' % (hour, minu, p, abbwn, hsym)
                 #elif for_fun < 0.60:
-                    last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, hsym)
+                #   last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, hsym)
                 #elif for_fun < 0.90:
-                if for_fun < 0.90:
+                if for_fun < 0.20:
+                    last_name = '%s' % rainbow
+                elif for_fun < 0.40:
+                    last_name = '%s' % lemon
+                elif for_fun < 0.60:
+                    last_name = '%s' % watermelon
+                elif for_fun < 0.80:
                     last_name = '%s' % dizzy
                 else:
                     last_name = '%s' % cake
