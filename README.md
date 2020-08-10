@@ -31,21 +31,23 @@ ctrl + c 结束运行
 ## 5. 进程守护
 
 <code>mkdir /usr/lib/systemd/system</code>
+
+service配置
 <code>cat > /usr/lib/systemd/system/timebot.service << EOF
 [Unit]
 Description=Telegram-Name-Updating daemon
-After=network.target
+After=network.target</code>
 
-[Install]
-WantedBy=multi-user.target
+<code>[Install]
+WantedBy=multi-user.target</code>
 
-[Service]
+<code>[Service]
 Type=simple
 WorkingDirectory=/opt/Telegram-Name-Updating
 ExecStart=/usr/bin/python3 tg_username_update.py
-Restart=always
+Restart=always</code>
 
-EOF</code>
+<code>EOF</code>
 
 ## 6.启动bot
 
