@@ -32,8 +32,7 @@ ctrl + c 结束运行
 
 <code>mkdir /usr/lib/systemd/system</code>
 
-service配置  
-(以下代码要全部一起复制粘贴过去)  
+service配置(以下代码要全部一起复制粘贴过去)  
 
 ```markdown
 
