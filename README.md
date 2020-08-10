@@ -12,8 +12,7 @@ Update (first/last/user) name of Telegram user every 30 seconds.
 
 ## 1. 下载Demo小程序到VPS上
 
-<code>git clone https://github.com/Sakura-rua/Telegram-Name-Updating.git</code>\
-<code>cd Telegram-Name-Updating</code>
+<code>cd /opt && git clone https://github.com/Sakura-rua/Telegram-Name-Updating.git && cd Telegram-Name-Updating</code>
 
 ## 2. 安装telethon
 
@@ -26,3 +25,28 @@ Update (first/last/user) name of Telegram user every 30 seconds.
 ## 4. api认证和用户登陆
 
 根据提示输入api_id和api_hash。接着输入手机号和验证码，如果账号开启了二次验，证根据提示再输入二次验证的密码。最后看到 It works! 表明成功了。 默认的是每30秒钟按照一定概率更新一次lastname到特定模式。
+
+ctrl + c 结束运行
+
+## 5. 进程守护
+
+<code>mkdir /usr/lib/systemd/system</code>
+<code>cat > /usr/lib/systemd/system/timebot.service << EOF
+[Unit]
+Description=Telegram-Name-Updating daemon
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/Telegram-Name-Updating
+ExecStart=/usr/bin/python3 tg_username_update.py
+Restart=always
+
+EOF</code>
+
+## 6.启动bot
+
+<code>systemctl daemon-reload && systemctl start timebot && systemctl enable timebot</code>
