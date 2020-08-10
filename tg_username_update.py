@@ -16,6 +16,11 @@ from telethon import TelegramClient
 from telethon.tl.functions.account import UpdateProfileRequest
 from emoji import emojize
 
+sparkles = emojize(":sparkles:", use_aliases=True)
+zap = emojize(":zap:", use_aliases=True)
+sweat_drops = emojize(":sweat_drops:", use_aliases=True)
+dash = emojize(":dash:", use_aliases=True)
+beers = emojize(":beers:", use_aliases=True)
 rainbow = emojize(":rainbow:", use_aliases=True)
 lemon = emojize(":lemon:", use_aliases=True)
 watermelon = emojize(":watermelon:", use_aliases=True)
@@ -65,14 +70,24 @@ async def change_name_auto():
                 #elif for_fun < 0.60:
                 #   last_name = '%s:%s %s UTC+8 %s' % (hour, minu, p, hsym)
                 #elif for_fun < 0.90:
-                if for_fun < 0.20:
+                if for_fun < 0.10:
                     last_name = '%s' % rainbow
-                elif for_fun < 0.40:
+                elif for_fun < 0.20:
                     last_name = '%s' % lemon
-                elif for_fun < 0.60:
+                elif for_fun < 0.30:
                     last_name = '%s' % watermelon
-                elif for_fun < 0.80:
+                elif for_fun < 0.40:
                     last_name = '%s' % dizzy
+                elif for_fun < 0.50:
+                    last_name = '%s' % sparkles
+                elif for_fun < 0.60:
+                    last_name = '%s' % zap
+                elif for_fun < 0.70:
+                    last_name = '%s' % sweat_drops
+                elif for_fun < 0.80:
+                    last_name = '%s' % dash
+                elif for_fun < 0.90:
+                    last_name = '%s' % beers
                 else:
                     last_name = '%s' % cake
         
